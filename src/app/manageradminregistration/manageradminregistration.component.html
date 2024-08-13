@@ -1,0 +1,106 @@
+<div class="row" style="background-color: palegoldenrod;">
+    <div class="col-sm-12">
+
+      <div class="row" style="text-align: center;">
+        <div class="col-sm-12">
+            <h1>Registration</h1>
+        </div>
+      </div>
+
+      <!-- <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-1">AdminId</div>
+        <div class="col-sm-3">
+            <input type="text" id="id1" placeholder="Enter Id" class="form-control" />
+        </div>
+        <div class="col-sm-3"></div>
+      </div> -->
+
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-1">Name</div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdmList.name" id="name1" placeholder="Enter Your Name" class="form-control" />
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-1">Gender</div>
+        <div class="col-sm-3">
+            <input type="radio" [(ngModel)]="AdmList.gender" id="btn1" name="Gender" value="Male">Male |
+            <input type="radio" [(ngModel)]="AdmList.gender" id="btn2" name="Gender" value="Female">Female 
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-1">Email</div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdmList.email" id="email1" placeholder="Enter Email" class="form-control" />
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-1">Password</div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdmList.password" id="pwd1" placeholder="Enter Password" class="form-control" />
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-1">Address</div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdmList.address" id="add1" placeholder="Enter Address" class="form-control" />
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-1">Active</div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdmList.active" id="act1" placeholder="Enter Active status" class="form-control" />
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+
+
+      <div class="row" style="margin-top: 20px;color: black;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-1">AdminTypeId</div>
+        <div class="col-sm-3">
+            <select [(ngModel)]="AdmList.adminTypeId" class="form-control">
+              <option value="0">-Select option-</option>
+              <option *ngFor="let admt of AdmTypeList" value="{{admt.adminTypeId}}">{{admt.adminTypeName}}</option>
+            </select>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+
+
+      <div class="row" style="text-align: center;margin-right: 200px;margin-top: 20px;">
+        <div class="col-sm-12">
+          <input type="button" id="Register1" value="Register" class="btn btn-primary" (click)="btn_Register()" />|
+          <input type="button" id="Cancel1" value="Cancel" class="btn btn-danger" (click)="btn_Cancel()" />
+        </div>
+      </div>
+
+
+      <br/>
+      <br/>
+      
+
+
+
+
+
+
+    </div>
+</div>
