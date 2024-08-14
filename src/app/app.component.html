@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="false">
   <div class="col-sm-12">
 
     <!-- Header Section -->
@@ -44,17 +44,59 @@
       </div>
       <div class="col-sm-3">
         <p style="margin-left: 30px;font-size: large;font-weight: bold;">Find us on</p>
+        <a href="https://www.facebook.com/">
         <img style="width:50px;margin-left: 30px;" src="Images/fblogo.png" />
+      </a>
+      <a href="https://www.youtube.com/">
         <img style="width:50px;margin-left: 30px;" src="Images/youtubelogo.png" />
+      </a>
+       <a href="https://x.com/?lang=en">
         <img style="width:50px;margin-left: 30px;" src="Images/twitlogo.png" />
+      </a>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm-12">
-        <input type="button" value="Click" />
+    
+
+  </div>
+</div>
+
+
+<div class="row" *ngIf="true">
+  <div class="col-sm-12">
+    
+  <div class="row">
+
+    <div class="col-sm-2" style="background-color: rgb(171, 231, 60);height: 300px;margin-top: 30px;">
+
+       <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+        <a routerLink="manageradmin" style="text-decoration: none;font-weight: bold;font-size: large;">ManagerAdmin</a>
+        </div>
+        <div class="col-sm-1"></div>
+       </div>
+       
+       <div class="row" style="margin-top: 20px;"> 
+      <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+        <a routerLink="operation" style="text-decoration: none;font-weight: bold;font-size: large;">OperationalAdmin</a>
+        </div>
+        <div class="col-sm-1"></div>
       </div>
+
     </div>
+
+    <div class="col-sm-10">
+      <div class="row" >
+        <div class="col-sm-12" style="margin-top: 50px;margin-left: 30px;">
+            <router-outlet></router-outlet>               
+         </div>
+      </div>
+      </div>
+
+
+  </div>
 
   </div>
 </div>
