@@ -12,6 +12,8 @@ import { AdminService } from './Services/admin.service';
 import { AdmintypeService } from './Services/admintype.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ManageradminComponent } from './manageradmin/manageradmin.component';
+import { OperationaladminComponent } from './operationaladmin/operationaladmin.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     ManageradminregistrationComponent,
     AboutusComponent,
-    ContactusComponent
+    ContactusComponent,
+    ManageradminComponent,
+    OperationaladminComponent
   ],
   imports: [
     BrowserModule,
