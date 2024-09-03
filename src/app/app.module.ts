@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { ManageradminComponent } from './manageradmin/manageradmin.component';
 import { OperationaladminComponent } from './operationaladmin/operationaladmin.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

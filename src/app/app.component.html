@@ -1,102 +1,143 @@
-<div class="row" *ngIf="false">
-  <div class="col-sm-12">
-
-    <!-- Header Section -->
-    <div class="row" style="background-color: cornsilk;height: 65px;padding-top: 10px;font-size: large;">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-1">
-        <a routerLink="home" style="text-decoration: none;color: #0957b0;">
-        <img style="width: 50px;margin-bottom: 30px;" src="Images/Apollologo.png" alt="Apollo" />
-      </a>
-      </div>
-      <div class="col-sm-7" style="margin-top: 10px;">
-        <a routerLink="home" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">Home</a>&nbsp;&nbsp;&nbsp;
-        <a routerLink="login" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">Login</a>&nbsp;&nbsp;&nbsp;
-        <a routerLink="register" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">ManagerAdminRegistration</a>&nbsp;&nbsp;&nbsp;
-        <a routerLink="aboutus" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">AboutUs</a>&nbsp;&nbsp;&nbsp;
-        <a routerLink="contactus" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">ContactUs</a>
-      </div>
-      <div class="col-sm-3">
-        <img style="width:35px;margin-left: 65px;" src="Images/cart.png" />
-        <img style="width:35px;margin-left: 65px;" src="Images/login.png" />
-      </div>
-    </div>
-
-    <!-- Context Section -->
-
-    <div class="row">
-      <div class="col-sm-12">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-
-    <!-- FooterSection -->
-
-    <div class="row" style="background-color: cornsilk;height: 95px;font-size: large;">
-      <div class="col-sm-3">
-        <img style="width: 150px;margin-bottom: 20px;margin-top: 10px;margin-left: 30px;" src="Images/logo2.png" />
-      </div>
-      <div class="col-sm-2"></div>
-      <div class="col-sm-4" >
-        <p style="margin-right: 100px;font-size: large;font-weight: bold;">Get Apollo Mobile App</p>
-        <img style="width:50px;margin-left: 30px;" src="Images/Apple.png" />
-        <img style="width:50px;margin-left: 30px;" src="Images/Playstore.png" />
-      </div>
-      <div class="col-sm-3">
-        <p style="margin-left: 30px;font-size: large;font-weight: bold;">Find us on</p>
-        <a href="https://www.facebook.com/">
-        <img style="width:50px;margin-left: 30px;" src="Images/fblogo.png" />
-      </a>
-      <a href="https://www.youtube.com/">
-        <img style="width:50px;margin-left: 30px;" src="Images/youtubelogo.png" />
-      </a>
-       <a href="https://x.com/?lang=en">
-        <img style="width:50px;margin-left: 30px;" src="Images/twitlogo.png" />
-      </a>
-      </div>
-    </div>
-
-    
-
-  </div>
-</div>
-
-
-<div class="row" *ngIf="true">
-  <div class="col-sm-12">
-    
+<div *ngIf="flagAnony">
+  <!-- Anonymous pages -->
   <div class="row">
-
-    <div class="col-sm-2" style="background-color: rgb(171, 231, 60);height: 300px;margin-top: 30px;">
-
-       <div class="row" style="margin-top: 20px;">
+    <div class="col-sm-12">
+  
+      <!-- Header Section -->
+      <div class="row" style="background-color: #f1e5b7;height: 65px;padding-top: 10px;font-size: large;">
         <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-        <a routerLink="manageradmin" style="text-decoration: none;font-weight: bold;font-size: large;">ManagerAdmin</a>
+        <div class="col-sm-1">
+          <a routerLink="home" style="text-decoration: none;color: #0957b0;">
+          <img style="width: 50px;margin-bottom: 30px;" src="Images/Apollologo.png" alt="Apollo" />
+        </a>
         </div>
-        <div class="col-sm-1"></div>
-       </div>
-       
-       <div class="row" style="margin-top: 20px;"> 
-      <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-        <a routerLink="operation" style="text-decoration: none;font-weight: bold;font-size: large;">OperationalAdmin</a>
+        <div class="col-sm-7" style="margin-top: 10px;">
+          <a routerLink="home" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">Home</a>&nbsp;&nbsp;&nbsp;
+          <a routerLink="login" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">Login</a>&nbsp;&nbsp;&nbsp;
+          <a routerLink="register" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">ManagerAdminRegistration</a>&nbsp;&nbsp;&nbsp;
+          <a routerLink="aboutus" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">AboutUs</a>&nbsp;&nbsp;&nbsp;
+          <a routerLink="contactus" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">ContactUs</a>
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+          <img style="width:35px;margin-left: 65px;" src="Images/cart.png" />
+          <img style="width:35px;margin-left: 65px;" src="Images/login.png" />
+        </div>
       </div>
-
+  
+      <!-- Context Section -->
+  
+      <div class="row">
+        <div class="col-sm-12">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+  
+      <!-- FooterSection -->
+  
+      <div class="row" style="background-color: #f1e5b7;height: 95px;font-size: large;position: fixed;left: 0;right: 0;bottom: 0;width: 100%">
+        <div class="col-sm-3">
+          <img style="width: 150px;margin-bottom: 20px;margin-top: 10px;margin-left: 30px;" src="Images/logo2.png" />
+        </div>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4" >
+          <p style="margin-right: 100px;font-size: large;font-weight: bold;">Get Apollo Mobile App</p>
+          <img style="width:50px;margin-left: 30px;" src="Images/Apple.png" />
+          <img style="width:50px;margin-left: 30px;" src="Images/Playstore.png" />
+        </div>
+        <div class="col-sm-3">
+          <p style="margin-left: 30px;font-size: large;font-weight: bold;">Find us on</p>
+          <a href="https://www.facebook.com/">
+          <img style="width:50px;margin-left: 30px;" src="Images/fblogo.png" />
+        </a>
+        <a href="https://www.youtube.com/">
+          <img style="width:50px;margin-left: 30px;" src="Images/youtubelogo.png" />
+        </a>
+         <a href="https://x.com/?lang=en">
+          <img style="width:50px;margin-left: 30px;" src="Images/twitlogo.png" />
+        </a>
+        </div>
+      </div>
     </div>
-
-    <div class="col-sm-10">
-      <div class="row" >
-        <div class="col-sm-12" style="margin-top: 50px;margin-left: 30px;">
-            <router-outlet></router-outlet>               
-         </div>
-      </div>
-      </div>
-
-
   </div>
-
-  </div>
+  
+  <!-- ----------------------------------------------------------------------------- -->
+   
 </div>
+
+<div *ngIf="flagSecure">
+  <!-- Secure pages -->
+  <div class="row">
+    <div class="col-sm-12">
+  
+      <!-- Header Section -->
+      <div class="row" style="background-color: #a9e1a9;height: 65px;padding-top: 10px;font-size: large;">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1">
+          <a routerLink="home" style="text-decoration: none;color: #0957b0;">
+          <img style="width: 50px;margin-bottom: 30px;" src="Images/Apollologo.png" alt="Apollo" />
+        </a>
+        </div>
+        <div class="col-sm-10" style="margin-top: 10px;text-align: right;">
+          <div>
+            <input type="button" value="Logout" class="btn btn-danger" (click)="btn_LogoutClick()" />
+          </div>
+        </div>        
+      </div>
+  
+      <!-- Context Section -->
+  
+      <div class="row">
+        <div class="col-sm-2" *ngIf="flagSecMg" style="background-color: green;height:470px">
+          <div class="row">
+            <div class="col-sm-12">
+              <a routerLink="manageradmin" style="margin-left: 30px;text-decoration: none;color: white;font-weight: bold;">Mangeral Profile</a>&nbsp;&nbsp;&nbsp;
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-2" *ngIf="flagSecOp" style="background-color: green;height:470px">
+          <div class="row">
+            <div class="col-sm-12">
+              <a routerLink="operation" style="margin-left: 30px;text-decoration: none;color: white;font-weight: bold;">Operational Profile</a>&nbsp;&nbsp;&nbsp;
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-sm-10">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+  
+      <!-- FooterSection -->
+  
+      <div class="row" style="background-color: #a9e1a9;height: 95px;font-size: large;position: fixed;left: 0;bottom: 0;width: 100%">
+        <div class="col-sm-3">
+          <img style="width: 150px;margin-bottom: 20px;margin-top: 10px;margin-left: 30px;" src="Images/logo2.png" />
+        </div>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4" >
+          <p style="margin-right: 100px;font-size: large;font-weight: bold;">Get Apollo Mobile App</p>
+          <img style="width:50px;margin-left: 30px;" src="Images/Apple.png" />
+          <img style="width:50px;margin-left: 30px;" src="Images/Playstore.png" />
+        </div>
+        <div class="col-sm-3">
+          <p style="margin-left: 30px;font-size: large;font-weight: bold;">Find us on</p>
+          <a href="https://www.facebook.com/">
+          <img style="width:50px;margin-left: 30px;" src="Images/fblogo.png" />
+        </a>
+        <a href="https://www.youtube.com/">
+          <img style="width:50px;margin-left: 30px;" src="Images/youtubelogo.png" />
+        </a>
+         <a href="https://x.com/?lang=en">
+          <img style="width:50px;margin-left: 30px;" src="Images/twitlogo.png" />
+        </a>
+        </div>
+      </div>
+  
+      
+  
+    </div>
+  </div>
+  
+</div>
+

@@ -5,7 +5,7 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-1">UserName</div>
             <div class="col-sm-3">
-                <input type="text" placeholder="Enter your name" class="form-control" />
+                <input type="text" [(ngModel)]="Username" placeholder="Enter your name" class="form-control" />
             </div>
             <div class="col-sm-3"></div>
         </div>
@@ -14,7 +14,7 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-1">Password</div>
             <div class="col-sm-3">
-                <input type="password" placeholder="Enter your Password" class="form-control" />
+                <input type="password" [(ngModel)]="Password"  placeholder="Enter your Password" class="form-control" />
             </div>
             <div class="col-sm-1"></div>
         </div>
@@ -25,8 +25,8 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-3">
         
-                <input  type="button" value="Login" class="btn btn-danger" /> |
-                <input  type="button" value="Cancel" class="btn btn-warning" /> 
+                <input  type="button" value="Login" class="btn btn-danger" (click)="btn_Login()" /> |
+                <input  type="button" value="Cancel" class="btn btn-warning" (click)="btn_Cancel()" /> 
             </div>
             <div class="col-sm-1"></div>
 

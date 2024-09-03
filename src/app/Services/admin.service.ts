@@ -18,9 +18,12 @@ AdminWebApiPath:string="/api/Adminn/";
  
    }
 
-   GetByEmail(adm:string):Observable<Admin>{
-  return  this.httpser.get<Admin>(this.HostUrl+this.AdminWebApiPath+"CheckLogin"+adm);
+   Checklogin(em:string,pwd:string):Observable<Admin>{
+    debugger;
+   return this.httpser.get<Admin>(this.HostUrl+this.AdminWebApiPath+"CheckLogin?Email="+em+"&Password="+pwd);
    }
+
+   
 
   Adminregistration(adm:Admin):Observable<number>{
    return this.httpser.post<number>(this.HostUrl+this.AdminWebApiPath+"AdminRegistration",adm);
