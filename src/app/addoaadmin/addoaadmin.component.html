@@ -1,0 +1,93 @@
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="row" style="margin-top: 20px;text-align: center;">
+            <div class="col-sm-12">
+                <h2>Add Operational Admin</h2>
+            </div>
+        </div>
+        
+      <div class="row" style="margin-top: 15px;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-1">Name</div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="Adminlist.name" id="nam2" placeholder="Enter your Name" class="form-control" />
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+
+      <div class="row" style="margin-top: 15px;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-1">Gender</div>
+        <div class="col-sm-3">
+            <input type="radio" [(ngModel)]="Adminlist.gender" id="btn_male" name="Gender" value="Male"   />Male |
+            <input type="radio" [(ngModel)]="Adminlist.gender" id="btn_female" name="Gender" value="Female"   />Female
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-1">Email</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Adminlist.email" id="em2" placeholder="Enter your Email" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-1">Password</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Adminlist.password" id="pwd2" placeholder="Enter your Password" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-1">Address</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Adminlist.address" id="add2" placeholder="Enter your Name" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-1">Active</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Adminlist.active" id="act1" placeholder="Enter your Name" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-1">AdminTypeId</div>
+            <div class="col-sm-3">
+                <select [(ngModel)]="Adminlist.adminTypeId" class="form-control">
+                    <option value="0">-Select Option-</option>
+                    <option *ngFor="let admtyp of AdminTypeList" value="{{admtyp.adminTypeId}}">{{admtyp.adminTypeName}}</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 20px;text-align: center;margin-right: 100px;">
+            <div class="col-sm-12">
+                <input type="button" value="Register" class="btn btn-primary" (click)="btn_Reg()" />|
+                <input type="button" value="Cancel" class="btn btn-danger" (click)="btn_Can()" />
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+
+    </div>
+</div>

@@ -14,6 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ManageradminComponent } from './manageradmin/manageradmin.component';
 import { OperationaladminComponent } from './operationaladmin/operationaladmin.component';
+import { ActiveComponent } from './active/active.component';
+import { AddoaadminComponent } from './addoaadmin/addoaadmin.component';
+import { ManageroaadminComponent } from './manageroaadmin/manageroaadmin.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { OperationaladminComponent } from './operationaladmin/operationaladmin.c
     AboutusComponent,
     ContactusComponent,
     ManageradminComponent,
-    OperationaladminComponent
+    OperationaladminComponent,
+    ActiveComponent,
+    AddoaadminComponent,
+    ManageroaadminComponent
   ],
   imports: [
     BrowserModule,

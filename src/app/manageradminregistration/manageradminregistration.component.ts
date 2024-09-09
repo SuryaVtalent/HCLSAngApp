@@ -27,7 +27,8 @@ export class ManageradminregistrationComponent implements OnInit {
 
   btn_Register():void{
     debugger;
-    
+
+    this.AdmList.adminId=parseInt(this.AdmList.adminId.toString());
     this.AdmList.adminTypeId=parseInt(this.AdmList.adminTypeId.toString());
     
 

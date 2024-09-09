@@ -7,6 +7,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ManageradminComponent } from './manageradmin/manageradmin.component';
 import { OperationaladminComponent } from './operationaladmin/operationaladmin.component';
+import { ActiveComponent } from './active/active.component';
+import { AddoaadminComponent } from './addoaadmin/addoaadmin.component';
+import { ManageroaadminComponent } from './manageroaadmin/manageroaadmin.component';
 
 const routes: Routes = [
 
@@ -18,6 +21,9 @@ const routes: Routes = [
   {path:"contactus",component:ContactusComponent},
   {path:"manageradmin",component:ManageradminComponent},
   {path:"operation",component:OperationaladminComponent},
+  {path:"addOA",component:AddoaadminComponent},
+  {path:"managerOA",component:ManageroaadminComponent},
+  {path:"active",component:ActiveComponent},
   {path:"**",redirectTo:"home",pathMatch:'full'}
 ];
 

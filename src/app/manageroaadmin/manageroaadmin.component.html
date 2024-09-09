@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-sm-12">
+
+     <div class="row" style="margin-top: 10px;text-align: center;">
+        <div class="col-sm-12">
+            <h2>OA Details</h2>
+        </div>
+     </div>
+
+     <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>AdminId</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Address</th>
+                        <th>Active</th>
+                        <th>AdminTypeId</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let admlist of AdmList">
+                        <td>{{admlist.adminId}}</td>
+                        <td>{{admlist.name}}</td>
+                        <td>{{admlist.gender}}</td>
+                        <td>{{admlist.email}}</td>
+                        <td>{{admlist.password}}</td>
+                        <td>{{admlist.address}}</td>
+                        <td>{{admlist.active}}</td>
+                        <td>{{admlist.adminTypeId}}</td>
+                        <td>
+                            <input type="button" value="Edit" class="btn btn-warning" (click)="btn_EditClk()" /> |
+                            <input type="button" value="Delete" class="btn btn-danger" (click)="btn_DeleteClk()" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+     </div>
+
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+
+
+    </div>
+</div>

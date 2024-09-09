@@ -27,26 +27,36 @@ export class LoginComponent implements OnInit {
 
   btn_Login():void{
     //Check For User Credential
-    debugger;
+    //debugger;
 
     this.admserv.Checklogin(this.Username,this.Password).subscribe((data:any)=>{
+      
       if(data==null){
         alert("You are not registered with Us");
         this.route.navigate(["register"]);
       }
       else{
-        window.sessionStorage.setItem("login",data);
+        window.sessionStorage.setItem("login",JSON.stringify(data));
         window.sessionStorage.setItem("adminType",data.adminTypeId.toString());
-        if(data.adminTypeId==10){
-          this.route.navigate(["manageradmin"]).then(()=>{
-            window.location.reload();
-          });
+        window.sessionStorage.setItem("adminId",data.adminId.toString());
+
+        if(data.active==true){
+          if(data.adminTypeId==10){
+            this.route.navigate(["manageradmin"]).then(()=>{
+              window.location.reload();
+            });
+          }
+          else{
+            this.route.navigate(["operation"]).then(()=>{
+              window.location.reload();
+            });
+          }
+        }else{
+          alert("You are not Activated");
+          this.route.navigate(["active"]);
         }
-        else{
-          this.route.navigate(["operation"]).then(()=>{
-            window.location.reload();
-          });
-        }
+
+        
       }
     })
 

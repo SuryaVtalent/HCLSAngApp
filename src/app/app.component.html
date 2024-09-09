@@ -16,7 +16,8 @@
           <a routerLink="login" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">Login</a>&nbsp;&nbsp;&nbsp;
           <a routerLink="register" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">ManagerAdminRegistration</a>&nbsp;&nbsp;&nbsp;
           <a routerLink="aboutus" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">AboutUs</a>&nbsp;&nbsp;&nbsp;
-          <a routerLink="contactus" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">ContactUs</a>
+          <a routerLink="contactus" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">ContactUs</a>&nbsp;&nbsp;&nbsp;
+          <!-- <a routerLink="active" style="margin-left: 30px;text-decoration: none;color: #0957b0;font-weight: bold;">Active</a> -->
         </div>
         <div class="col-sm-3">
           <img style="width:35px;margin-left: 65px;" src="Images/cart.png" />
@@ -90,7 +91,9 @@
         <div class="col-sm-2" *ngIf="flagSecMg" style="background-color: green;height:470px">
           <div class="row">
             <div class="col-sm-12">
-              <a routerLink="manageradmin" style="margin-left: 30px;text-decoration: none;color: white;font-weight: bold;">Mangeral Profile</a>&nbsp;&nbsp;&nbsp;
+              <a routerLink="manageradmin" style="margin-left: 30px;text-decoration: none;color: white;font-weight: bold;">Manageral Profile</a>&nbsp;&nbsp;&nbsp;
+              <a routerLink="addOA" style="margin-left: 30px;text-decoration: none;color: white;font-weight: bold;">AddOAAdmin Profile</a>&nbsp;&nbsp;&nbsp;
+              <a routerLink="managerOA" style="margin-left: 30px;text-decoration: none;color: white;font-weight: bold;">Manager OA Profile</a>&nbsp;&nbsp;&nbsp;
             </div>
           </div>
         </div>
@@ -102,6 +105,7 @@
             </div>
           </div>
         </div>
+
         
         <div class="col-sm-10">
           <router-outlet></router-outlet>
@@ -135,9 +139,19 @@
       </div>
   
       
-  
+      <!-- Active -->
+  <div class="row">
+    <div class="col-sm-12">
+      <a routerLink="active">Active</a>
     </div>
   </div>
   
+    </div>
+  </div>
+
+  
+  
 </div>
+
+
 
