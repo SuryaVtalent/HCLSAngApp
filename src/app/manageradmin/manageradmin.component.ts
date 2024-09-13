@@ -26,25 +26,35 @@ this.AdmList={adminId:0,name:"",gender:"",email:"",password:"",address:"",active
 
   ngOnInit(): void {
 
-  this.admtypeser.GetAdmintypes().subscribe(data=>{
-    this.AdminTypeList=data;
-  },error=>alert(error));
-    
-  
-  this.admser.GetAdminId(parseInt(window.sessionStorage.getItem("adminId")!.toString())).subscribe(data=>{
-    this.AdmList=data;
-  },error=>alert(error));
-
-  let sessionLogval=window.sessionStorage.getItem("login");
-  if(sessionLogval==null){
+    let sessionLogVal= window.sessionStorage.getItem("login");
+   if(sessionLogVal==null){
     this.router.navigate(["login"]).then(()=>{
-      window.location.reload();
-    })
+    window.location.reload();
+    });
+   }
 
+   this.GetAdminType();
+
+    this.GetAdmin();
+  
+  
+  
+    
+    
   }
 
+  GetAdminType():void{
+    this.admtypeser.GetAdmintypes().subscribe(data=>{
+      this.AdminTypeList=data;
+    },error=>alert(error));
     
-    
+  }
+
+  GetAdmin():void{
+    this.admser.GetAdminId(parseInt(window.sessionStorage.getItem("adminId")!.toString())).subscribe(data=>{
+      this.AdmList=data;
+    },error=>alert(error));
+  
   }
 
 
@@ -88,7 +98,22 @@ this.AdmList={adminId:0,name:"",gender:"",email:"",password:"",address:"",active
   }
 
   
+  btn_Cancel():void{
 
+    let sessionval=window.sessionStorage.getItem("login");
+    
+    if(sessionval==null){
+      this.FlagEdit=false;
+      this.FlagUpdate=true;
+    }
+    else{
+      this.FlagEdit=true;
+      this.FlagUpdate=false;
+    }
+ 
+    this.GetAdminType();
+    this.GetAdmin();
+  }
   
 
 }

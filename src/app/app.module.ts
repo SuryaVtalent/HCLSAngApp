@@ -17,6 +17,16 @@ import { OperationaladminComponent } from './operationaladmin/operationaladmin.c
 import { ActiveComponent } from './active/active.component';
 import { AddoaadminComponent } from './addoaadmin/addoaadmin.component';
 import { ManageroaadminComponent } from './manageroaadmin/manageroaadmin.component';
+import { AddhospitalemployeesComponent } from './addhospitalemployees/addhospitalemployees.component';
+import { ManagehospitalemployeesComponent } from './managehospitalemployees/managehospitalemployees.component';
+import { ReceptionistComponent } from './receptionist/receptionist.component';
+import { AddDoctorComponent } from './add-doctor/add-doctor.component';
+import { HelpersComponent } from './helpers/helpers.component';
+import { LabsComponent } from './labs/labs.component';
+import { ManagereceptionistComponent } from './managereceptionist/managereceptionist.component';
+import { ManagedoctorComponent } from './managedoctor/managedoctor.component';
+import { ManagehelpersComponent } from './managehelpers/managehelpers.component';
+import { ManagelabsComponent } from './managelabs/managelabs.component';
 
 
 @NgModule({
@@ -31,7 +41,17 @@ import { ManageroaadminComponent } from './manageroaadmin/manageroaadmin.compone
     OperationaladminComponent,
     ActiveComponent,
     AddoaadminComponent,
-    ManageroaadminComponent
+    ManageroaadminComponent,
+    AddhospitalemployeesComponent,
+    ManagehospitalemployeesComponent,
+    ReceptionistComponent,
+    AddDoctorComponent,
+    HelpersComponent,
+    LabsComponent,
+    ManagereceptionistComponent,
+    ManagedoctorComponent,
+    ManagehelpersComponent,
+    ManagelabsComponent
   ],
   imports: [
     BrowserModule,

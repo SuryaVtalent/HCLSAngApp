@@ -26,14 +26,14 @@
             </div>
             <div class="col-sm-1">Password</div>
             <div class="col-sm-3">
-                <input type="text" [(ngModel)]="AdmList.password" id="pwd1" class="form-control" />
+                <input type="text" [(ngModel)]="AdmList.password" disabled id="pwd1" class="form-control" />
             </div>
         </div>
         
         <div class="row" style="margin-top: 20px;">
             <div class="col-sm-1">Address</div>
             <div class="col-sm-3">
-                <input type="text" [(ngModel)]="AdmList.address" id="add1" class="form-control" />
+                <input type="text" [(ngModel)]="AdmList.address" disabled id="add1" class="form-control" />
             </div>
             <div class="col-sm-1">Active</div>
             <div class="col-sm-3">
@@ -124,7 +124,8 @@
 
         <div class="row" style="margin-top: 50px;text-align: right;margin-right: 30px;">
             <div class="col-sm-12">
-                <input type="button" id="edit" value="Update" class="btn btn-danger" (click)="btn_Update()" />
+                <input type="button" id="edit" value="Update" class="btn btn-danger" (click)="btn_Update()" />|
+                <input type="button" id="canc" value="Cancel" class="btn btn-success" (click)="btn_Cancel()" />
             </div>
         </div>
 

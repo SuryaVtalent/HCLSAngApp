@@ -26,6 +26,13 @@ export class AddoaadminComponent implements OnInit {
     },error=>{
       alert(error);
     });
+
+    let sessionLogval=window.sessionStorage.getItem("login");
+    if(sessionLogval==null){
+      this.router.navigate(["login"]).then(()=>{
+        window.location.reload();
+      })
+    }
     
   }
 
@@ -34,8 +41,11 @@ export class AddoaadminComponent implements OnInit {
 
   btn_Reg():void{
 
-    this.Adminlist.adminTypeId=parseInt(this.Adminlist.adminTypeId.toString());
-
+    // this.Adminlist.adminTypeId=parseInt(this.Adminlist.adminTypeId.toString());
+    //We are directly adding the Values here...
+    
+   this.Adminlist.active=false;
+   this.Adminlist.adminTypeId=20;
 
     this.admser.Adminregistration(this.Adminlist).subscribe(data=>{
       alert(data + "Registered Succesfully");
@@ -44,7 +54,7 @@ export class AddoaadminComponent implements OnInit {
   }
 
   btn_Can():void{
-
+  this.router.navigate(["manageradmin"]);
   }
 
 }

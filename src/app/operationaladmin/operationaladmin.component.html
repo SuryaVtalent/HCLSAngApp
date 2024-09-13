@@ -1,1 +1,157 @@
-<p>operationaladmin works!</p>
+<div class="row" *ngIf="FlagEdit1">
+    <div class="col-sm-12">
+
+     <div class="row" style="text-align: center;">
+        <div class="col-sm-12">
+            <h2>OA Profile</h2>
+        </div>
+     </div>
+
+     <div class="row">
+        <div class="col-sm-1">Name</div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdminList.name" disabled id="name3" class="form-control" />
+        </div>
+        <div class="col-sm-1">Gender
+        </div>
+        <div class="col-sm-3">
+            <input type="radio" [(ngModel)]="AdminList.gender" disabled id="btn-male2" name="Gender1" value="Male">Male |
+            <input type="radio" [(ngModel)]="AdminList.gender" disabled id="btn-female2" name="Gender1" value="Female">Female
+        </div>
+     </div>
+
+     <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-1">Email</div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdminList.email" disabled id="email2" class="form-control" />
+        </div>
+        <div class="col-sm-1">Password
+        </div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdminList.password"  id="pwd2" class="form-control" />
+            
+        </div>
+     </div>
+
+     <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-1">Active</div>
+        <div class="col-sm-3">
+        <input type="text" [(ngModel)]="AdminList.active" disabled class="form-control" />    
+        </div>
+        <div class="col-sm-1">Address
+        </div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdminList.address" id="add2" class="form-control" />
+            
+        </div>
+     </div>
+
+     
+
+     <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-1">AdminType</div>
+        <div class="col-sm-3">
+            <select [(ngModel)]="AdminList.adminTypeId" disabled class="form-control">
+                <option *ngFor="let admtylist of Admintypelist" value="{{admtylist.adminTypeId}}">{{admtylist.adminTypeName}}</option>
+            </select>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3"></div>
+            
+        </div>
+
+
+        <div class="row" style="text-align: right;margin-top: 20px;margin-right: 40px;">
+            <div class="col-sm-12">
+                <input type="button" id="Edit2" value="Edit" class="btn btn-warning" (click)="btn_Editt()" />
+                
+            </div>
+        </div>
+     
+
+
+
+    </div>
+</div>
+
+
+<div class="row" *ngIf="FlagUpdate1">
+    
+    <div class="col-sm-12">
+
+     <div class="row" style="text-align: center;">
+        <div class="col-sm-12">
+            <h2>OA Profile</h2>
+        </div>
+     </div>
+
+     <div class="row">
+        <div class="col-sm-1">Name</div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdminList.name" disabled id="name3" class="form-control" />
+        </div>
+        <div class="col-sm-1">Gender
+        </div>
+        <div class="col-sm-3">
+            <input type="radio" [(ngModel)]="AdminList.gender" disabled id="btn-male2" name="Gender1" value="Male">Male |
+            <input type="radio" [(ngModel)]="AdminList.gender" disabled id="btn-female2" name="Gender1" value="Female">Female
+        </div>
+     </div>
+
+     <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-1">Email</div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdminList.email" disabled id="email2" class="form-control" />
+        </div>
+        <div class="col-sm-1">Password
+        </div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdminList.password"  id="pwd2" class="form-control" />
+            
+        </div>
+     </div>
+
+     <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-1">Active</div>
+        <div class="col-sm-3">
+        <input type="text" [(ngModel)]="AdminList.active" disabled class="form-control" />    
+        </div>
+        <div class="col-sm-1">Address
+        </div>
+        <div class="col-sm-3">
+            <input type="text" [(ngModel)]="AdminList.address" id="add2" class="form-control" />
+            
+        </div>
+     </div>
+
+     
+
+     <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-1">AdminType</div>
+        <div class="col-sm-3">
+            <select [(ngModel)]="AdminList.adminTypeId" disabled class="form-control">
+                <option *ngFor="let admtylist of Admintypelist" value="{{admtylist.adminTypeId}}">{{admtylist.adminTypeName}}</option>
+            </select>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3"></div>
+            
+        </div>
+
+
+        <div class="row" style="text-align: right;margin-top: 20px;margin-right: 100px;">
+            <div class="col-sm-12">
+                <input type="button" id="Update2" value="Update" class="btn btn-warning" (click)="btn_Updatee()" />|
+                <input type="button" id="Cancel2" value="Cancel" class="btn btn-primary" (click)="btn_Cancel()"/>
+                
+            </div>
+        </div>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+
+    </div>
+</div>

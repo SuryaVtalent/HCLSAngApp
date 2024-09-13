@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" >
     <div class="col-sm-12">
 
      <div class="row" style="margin-top: 10px;text-align: center;">
@@ -34,8 +34,8 @@
                         <td>{{admlist.active}}</td>
                         <td>{{admlist.adminTypeId}}</td>
                         <td>
-                            <input type="button" value="Edit" class="btn btn-warning" (click)="btn_EditClk()" /> |
-                            <input type="button" value="Delete" class="btn btn-danger" (click)="btn_DeleteClk()" />
+                            <input type="button" value="Edit" class="btn btn-warning" (click)="btn_EditClk(admlist.adminId)" /> |
+                            <input type="button" value="Delete" class="btn btn-danger" (click)="btn_DeleteClk(admlist.adminId)" />
                         </td>
                     </tr>
                 </tbody>
@@ -43,11 +43,198 @@
         </div>
      </div>
 
-     <br/>
-     <br/>
-     <br/>
-     <br/>
+
+     <div class="row" *ngIf="FlagEdit">
+        <div class="col-sm-12">
+
+            <div class="row" style="margin-top: 20px;text-align: center;">
+                <div class="col-sm-12">
+                    <h2>Edit OA</h2>
+                </div>
+            </div>
+            
+          <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-1">Name</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="adm.name" id="nam2" placeholder="Enter your Name" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+          </div>
+    
+          <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-1">Gender</div>
+            <div class="col-sm-3">
+                <input type="radio" [(ngModel)]="adm.gender"  id="btn-male" name="Gender1" value="Male"   />Male |
+                <input type="radio" [(ngModel)]="adm.gender"  id="btn-female" name="Gender1" value="Female"   />Female
+            </div>
+            <div class="col-sm-3"></div>
+          </div>
+    
+            <div class="row" style="margin-top: 15px;">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-1">Email</div>
+                <div class="col-sm-3">
+                    <input type="text" [(ngModel)]="adm.email"  id="em2" placeholder="Enter your Email" class="form-control" />
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+    
+            <div class="row" style="margin-top: 15px;">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-1">Password</div>
+                <div class="col-sm-3">
+                    <input type="text" [(ngModel)]="adm.password"  id="pwd2" placeholder="Enter your Password" class="form-control" />
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+            
+            <div class="row" style="margin-top: 15px;">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-1">Address</div>
+                <div class="col-sm-3">
+                    <input type="text" [(ngModel)]="adm.address"  id="add2" placeholder="Enter your Name" class="form-control" />
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+    
+            
+            <div class="row" style="margin-top: 15px;">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-1">Active</div>
+                <div class="col-sm-3">
+                    <select [(ngModel)]="adm.active" class="form-control">
+                        <option value="0">--Select Option</option>
+                        <option value="1">True</option>
+                        <option value="2">False</option>
+                    </select>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+    
+            
+            <!-- <div class="row" style="margin-top: 15px;">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-1">AdminTypeId</div>
+                <div class="col-sm-3">
+                    <select [(ngModel)]="adm.adminTypeId"  class="form-control">
+                        <option value="0">-Select Option-</option>
+                       <option *ngFor="let admtyp of AdminTypeList" value="{{admtyp.adminTypeId}}">{{admtyp.adminTypeName}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+     -->
+            <div class="row" style="margin-top: 20px;text-align: center;margin-right: 100px;">
+                <div class="col-sm-12">
+                    <input type="button" value="Update" class="btn btn-primary" (click)="btn_UpdateEdit()"  />|
+                    <input type="button" value="Cancel" class="btn btn-danger" (click)="btn_CancelEdit()"  />
+                </div>
+            </div>
+            </div>
+        </div>
 
 
-    </div>
-</div>
+        <div class="row" *ngIf="FlagDelete" >
+            <div class="col-sm-12">
+    
+                <div class="row" style="margin-top: 20px;text-align: center;">
+                    <div class="col-sm-12">
+                        <h2>Delete OA</h2>
+                    </div>
+                </div>
+                
+              <div class="row" style="margin-top: 15px;">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-1">Name</div>
+                <div class="col-sm-3">
+                    <input type="text" [(ngModel)]="adm.name" id="nam2" placeholder="Enter your Name" class="form-control" />
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+        
+              <div class="row" style="margin-top: 15px;">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-1">Gender</div>
+                <div class="col-sm-3">
+                    <input type="radio" [(ngModel)]="adm.gender"  id="btn_male" name="Gender" value="Male"   />Male |
+                    <input type="radio" [(ngModel)]="adm.gender"  id="btn_female" name="Gender" value="Female"   />Female
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+        
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-1">Email</div>
+                    <div class="col-sm-3">
+                        <input type="text" [(ngModel)]="adm.email"  id="em2" placeholder="Enter your Email" class="form-control" />
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+        
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-1">Password</div>
+                    <div class="col-sm-3">
+                        <input type="text" [(ngModel)]="adm.password"  id="pwd2" placeholder="Enter your Password" class="form-control" />
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-1">Address</div>
+                    <div class="col-sm-3">
+                        <input type="text" [(ngModel)]="adm.address"  id="add2" placeholder="Enter your Name" class="form-control" />
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+        
+                
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-1">Active</div>
+                    <div class="col-sm-3">
+                        <input type="text" [(ngModel)]="adm.active"  id="act1" placeholder="Enter your Name" class="form-control" />
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+        
+                
+                <!-- <div class="row" style="margin-top: 15px;">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-1">AdminTypeId</div>
+                    <div class="col-sm-3">
+                        <select [(ngModel)]="adm.adminTypeId"  class="form-control">
+                            <option value="0">-Select Option-</option>
+                           <option *ngFor="let admtyp of AdminTypeList" value="{{admtyp.adminTypeId}}">{{admtyp.adminTypeName}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+         -->
+                <div class="row" style="margin-top: 20px;text-align: center;margin-right: 100px;">
+                    <div class="col-sm-12">
+                        <input type="button" value="You want to Delete" class="btn btn-danger" (click)="btn_Delete(adm.adminId)"/>|
+                        <input type="button" value="Cancel" class="btn btn-primary" (click)="btn_DeleteCancel()" />
+                    </div>
+                </div>
+        
+    
+                
+            </div>
+         </div>
+    
+         <br/>
+         <br/>
+         <br/>
+         <br/>
+    
+
+            
+        </div>
+     </div>
+
+     
+     
