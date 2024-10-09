@@ -1,1 +1,319 @@
-<p>managelabs works!</p>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>LabId</th>
+                            <th>Name</th>
+                            <th>DOB</th>
+                            <th>DOJ</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Salary</th>
+                            <th>Address</th>
+                            <th>Active</th>
+                            <th>logged</th>
+                            <th>DeptNo</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let labs of LabList">
+                            <td>{{labs.labId}}</td>
+                            <td>{{labs.name}}</td>
+                            <td>{{labs.dob}}</td>
+                            <td>{{labs.doj}}</td>
+                            <td>{{labs.phone}}</td>
+                            <td>{{labs.email}}</td>
+                            <td>{{labs.password}}</td>
+                            <td>{{labs.salary}}</td>
+                            <td>{{labs.address}}</td>
+                            <td>{{labs.active}}</td>
+                            <td>{{labs.logged}}</td>
+                            <td>{{labs.deptNo}}</td>
+                            <td>
+                                <input type="button" id="logEdit" value="Edit" class="btn btn-primary" (click)="btn_labEdit(labs.labId)" /> |
+                                <input type="button" id="logDel" value="Delete" class="btn btn-danger" (click)="btn_labDelete(labs.labId)" />
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>   
+
+
+<!-- Lab Edit -->
+
+<div class="row" *ngIf="flaglabEdit">
+        <div class="col-sm-12">
+        
+        <div class="row" >
+            <div class="col-sm-3"></div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4" style="margin-top: 10px;background-color: palevioletred;text-align: center;">
+                Edit Lab Details
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+
+        <div class="row" style="margin-top: 10px;">
+         <div class="col-sm-4"></div>
+         <div class="col-sm-1">Name</div>
+         <div class="col-sm-3">
+            <input type="text" [(ngModel)]="Lab.name" id="name7" class="form-control" />
+         </div>
+         <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOB</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Lab.dob" id="dob3" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOJ</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Lab.doj" id="doj3" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+           
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Phone</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Lab.phone" id="phone7" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Email</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Lab.email" id="email7" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Password</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Lab.password" id="pwd7" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Salary</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Lab.salary" id="sal4" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Address</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Lab.address" id="add7" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 20px;text-align: center;">
+            <div class="col-sm-12">
+            
+                <input type="button" id="btn_Update" value="Update" class="btn btn-primary" (click)="btn_labUpdate()"  />
+                <input type="button" id="btn_Cancel" value="Cancel" class="btn btn-danger" (click)="btn_labCancel()"  />
+                
+            </div>
+            </div>
+            
+           
+
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+    </div>
+
+</div>
+
+<!-- Lab Delete -->
+
+<div class="row" *ngIf="flaglabDelete">
+    <div class="col-sm-12">
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Name</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.name"  id="name9" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOB</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.dob"  id="dob5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOJ</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.doj"  id="doj5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Phone</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.phone"  id="phone5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Email</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.email"  id="email6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Password</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.password"   id="pwd6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Salary</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.salary"  id="sal4" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Address</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.address" id="add6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Active</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Logged</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Assigned</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DocSpecId</div>
+            <div class="col-sm-3">
+                <select [(ngModel)]="Doc.docSpecId" class="form-control">
+                    <option *ngFor="let docspec of DocspecList" value="{{docspec.docSpecId}}">{{docspec.specialization}}</option>
+                    
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DeptNo</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option *ngFor="let dept of DeptList" value="{{dept.deptNo}}">{{dept.dName}}</option>
+                    
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+
+        <div class="row" style="text-align: center;margin-top: 20px;">
+            <div class="col-sm-12">
+                <input type="button" id="Reg6" value="Do You want to Delete" class="btn btn-primary" (click)="btn_labDel()" /> |
+                <input type="button" id="can6" value="Cancel" class="btn btn-danger" (click)="btn_labDelCancel()"/>
+            </div>
+        </div>
+
+
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+    </div>
+    
+</div>

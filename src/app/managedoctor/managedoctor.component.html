@@ -1,1 +1,373 @@
-<p>managedoctor works!</p>
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>DocId</th>
+                            <th>Name</th>
+                            <th>DOB</th>
+                            <th>DOJ</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Salary</th>
+                            <th>Address</th>
+                            <th>Active</th>
+                            <th>logged</th>
+                            <th>Assigned</th>
+                            <th>DocSpecId</th>
+                            <th>DeptNo</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let doc of DocList">
+                            <td>{{doc.docId}}</td>
+                            <td>{{doc.name}}</td>
+                            <td>{{doc.dob}}</td>
+                            <td>{{doc.doj}}</td>
+                            <td>{{doc.phone}}</td>
+                            <td>{{doc.email}}</td>
+                            <td>{{doc.password}}</td>
+                            <td>{{doc.salary}}</td>
+                            <td>{{doc.address}}</td>
+                            <td>{{doc.active}}</td>
+                            <td>{{doc.logged}}</td>
+                            <td>{{doc.assigned}}</td>
+                            <td>{{doc.docSpecId}}</td>
+                            <td>{{doc.deptNo}}</td>
+                            <td>
+                                <input type="button" id="Edit8" value="Edit" class="btn btn-primary" (click)="btn_DocEdit(doc.docId)" />
+                                <input type="button" id="Dele8" value="Delete" class="btn btn-danger" (click)="btn_DocDelete(doc.docId)" />
+                            </td>
+                        </tr>
+                    </tbody>
+
+
+
+                    </table>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<!-- Edit Doctor -->
+
+<div class="row" *ngIf="flagDocEdit">
+    <div class="col-sm-12">
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Name</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.name" id="name9" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOB</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.dob" id="dob5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOJ</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.doj" id="doj5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Phone</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.phone" id="phone5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Email</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.email" id="email6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Password</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.password" id="pwd6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Salary</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.salary" id="sal4" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Address</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.address" id="add6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Active</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Logged</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Assigned</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DocSpecId</div>
+            <div class="col-sm-3">
+                <select [(ngModel)]="Doc.docSpecId" class="form-control">
+                    <option *ngFor="let docspec of DocspecList" value="{{docspec.docSpecId}}">{{docspec.specialization}}</option>
+                    
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DeptNo</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option *ngFor="let dept of DeptList" value="{{dept.deptNo}}">{{dept.dName}}</option>
+                    
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+
+        <div class="row" style="text-align: center;margin-top: 20px;">
+            <div class="col-sm-12">
+                <input type="button" id="Reg6" value="Update" class="btn btn-primary" (click)="btn_DocUpdate()" /> |
+                <input type="button" id="can6" value="Cancel" class="btn btn-danger" (click)="btn_DocCancel()" />
+            </div>
+        </div>
+
+
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+    </div>
+    
+</div>
+
+ <!--Doc Delete -->
+
+
+ <div class="row" *ngIf="flagDocDelete">
+    <div class="col-sm-12">
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Name</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.name" id="name9" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOB</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.dob" id="dob5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOJ</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.doj" id="doj5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Phone</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.phone" id="phone5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Email</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.email" id="email6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Password</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.password" id="pwd6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Salary</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.salary" id="sal4" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Address</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Doc.address" id="add6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Active</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Logged</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Assigned</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DocSpecId</div>
+            <div class="col-sm-3">
+                <select [(ngModel)]="Doc.docSpecId" class="form-control">
+                    <option *ngFor="let docspec of DocspecList" value="{{docspec.docSpecId}}">{{docspec.specialization}}</option>
+                    
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DeptNo</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option *ngFor="let dept of DeptList" value="{{dept.deptNo}}">{{dept.dName}}</option>
+                    
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+
+        <div class="row" style="text-align: center;margin-top: 20px;">
+            <div class="col-sm-12">
+                <input type="button" id="Reg6" value="Do You want to Delete" class="btn btn-primary" (click)="btn_DocDel()" /> |
+                <input type="button" id="can6" value="Cancel" class="btn btn-danger" (click)="btn_DocDelCancel()" />
+            </div>
+        </div>
+
+
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+    </div>
+    
+</div>
+
+ 

@@ -20,6 +20,7 @@ import { ManagereceptionistComponent } from './managereceptionist/managereceptio
 import { ManagedoctorComponent } from './managedoctor/managedoctor.component';
 import { ManagehelpersComponent } from './managehelpers/managehelpers.component';
 import { ManagelabsComponent } from './managelabs/managelabs.component';
+import { HospitalDetailsComponent } from './hospital-details/hospital-details.component';
 
 const routes: Routes = [
 
@@ -54,7 +55,9 @@ const routes: Routes = [
     ]
 
   },
+  
   {path:"active",component:ActiveComponent},
+  {path:"hospital",component:HospitalDetailsComponent},
   {path:"**",redirectTo:"home",pathMatch:'full'}
 ];
 

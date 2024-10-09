@@ -1,1 +1,323 @@
-<p>managereceptionist works!</p>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>RecpId</th>
+                            <th>Name</th>
+                            <th>DOB</th>
+                            <th>DOJ</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Salary</th>
+                            <th>Address</th>
+                            <th>Active</th>
+                            <th>logged</th>
+                            <th>DeptNo</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let recp of RecpList">
+                            <td>{{recp.recpId}}</td>
+                            <td>{{recp.name}}</td>
+                            <td>{{recp.dob}}</td>
+                            <td>{{recp.doj}}</td>
+                            <td>{{recp.phone}}</td>
+                            <td>{{recp.email}}</td>
+                            <td>{{recp.password}}</td>
+                            <td>{{recp.salary}}</td>
+                            <td>{{recp.address}}</td>
+                            <td>{{recp.active}}</td>
+                            <td>{{recp.logged}}</td>
+                            <td>{{recp.deptNo}}</td>
+                            <td style="margin-right: 5px;">
+                                <input type="button" id="edit3" value="Edit" class="btn btn-primary" (click)="btn_RecpEdit(recp.recpId)" /> |
+                                <input type="button" id="del3" value="Delete" class="btn btn-danger" (click)="btn_RecpDelete(recp.recpId)" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Edit RecpPage -->
+
+<div class="row" *ngIf="flagRecEdit">
+    <div class="col-sm-12">
+        
+        <div class="row" >
+            <div class="col-sm-3"></div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4" style="margin-top: 10px;background-color: palevioletred;text-align: center;">
+                Edit Reception Details
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+
+        <div class="row" style="margin-top: 10px;">
+         <div class="col-sm-4"></div>
+         <div class="col-sm-1">Name</div>
+         <div class="col-sm-3">
+            <input type="text" [(ngModel)]="recp.name" id="name7" class="form-control" />
+         </div>
+         <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOB</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="recp.dob" id="dob3" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOJ</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="recp.doj" id="doj3" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+           
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Phone</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="recp.phone" id="phone7" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Email</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="recp.email" id="email7" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Password</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="recp.password" id="pwd7" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Salary</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="recp.salary" id="sal4" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Address</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="recp.address" id="add7" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 20px;text-align: center;">
+            <div class="col-sm-12">
+            
+                <input type="button" id="btn_Update" value="Update" class="btn btn-primary" (click)="btn_UpdateRecp()" />
+                <input type="button" id="btn_Cancel" value="Cancel" class="btn btn-danger" (click)="btn_CancelRecp()" />
+                
+            </div>
+            </div>
+            
+           
+
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+    </div>
+
+</div>
+
+<!-- Delete RecPage -->
+
+<div class="row" *ngIf="flagRecDelete">
+    <div class="col-sm-12">
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Name</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="recp.name"  id="name9" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOB</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="recp.dob"  id="dob5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOJ</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="recp.doj"  id="doj5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Phone</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="recp.phone"  id="phone5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Email</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="recp.email"  id="email6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Password</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="recp.password"   id="pwd6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Salary</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="recp.salary"  id="sal4" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Address</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="recp.address" id="add6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Active</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Logged</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Assigned</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DocSpecId</div>
+            <div class="col-sm-3">
+                <select [(ngModel)]="Doc.docSpecId" class="form-control">
+                    <option *ngFor="let docspec of DocspecList" value="{{docspec.docSpecId}}">{{docspec.specialization}}</option>
+                    
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DeptNo</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option *ngFor="let dept of DeptList" value="{{dept.deptNo}}">{{dept.dName}}</option>
+                    
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+
+        <div class="row" style="text-align: center;margin-top: 20px;">
+            <div class="col-sm-12">
+                <input type="button" id="Reg6" value="Do You want to Delete" class="btn btn-primary"  /> |
+                <input type="button" id="can6" value="Cancel" class="btn btn-danger"  (click)="btn_DelCancelRecp()" />
+            </div>
+        </div>
+
+
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+    </div>
+    
+</div>
+
+
+
+
+

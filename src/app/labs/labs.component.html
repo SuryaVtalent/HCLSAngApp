@@ -1,1 +1,135 @@
-<p>labs works!</p>
+<div class="row" *ngIf="flagEditLab">
+    <div class="col-sm-12">
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Name</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.name" id="name5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOB</div>
+            <div class="col-sm-3">
+                <input type="date" [(ngModel)]="Lab.dob" id="dob3" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOJ</div>
+            <div class="col-sm-3">
+                <input type="date" [(ngModel)]="Lab.doj" id="doj3" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Phone</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.phone" id="phone5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Email</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.email" id="email5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Password</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.password" id="pwd5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Salary</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.salary" id="sal3" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Address</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Lab.address" id="add5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Active</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Logged</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DeptNo</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="0">-Select option-</option>
+                    
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+
+        <div class="row" style="text-align: center;margin-top: 20px;">
+            <div class="col-sm-12">
+                <input type="button" id="Reg5" value="Register" class="btn btn-primary" (click)="btn_LabReg()" /> |
+                <input type="button" id="can5" value="Cancel" class="btn btn-danger" (click)="btn_LabCan()" />
+            </div>
+        </div>
+
+
+
+
+        
+    
+    
+    
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+    
+    </div>
+</div>

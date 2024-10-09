@@ -1,1 +1,323 @@
-<p>managehelpers works!</p>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>HelperId</th>
+                            <th>Name</th>
+                            <th>DOB</th>
+                            <th>DOJ</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Salary</th>
+                            <th>Address</th>
+                            <th>Active</th>
+                            <th>logged</th>
+                            <th>Assigned</th>
+                            <th>DeptNo</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let help of HelperList">
+                            <td>{{help.helpId}}</td>
+                            <td>{{help.name}}</td>
+                            <td>{{help.dob}}</td>
+                            <td>{{help.doj}}</td>
+                            <td>{{help.phone}}</td>
+                            <td>{{help.email}}</td>
+                            <td>{{help.password}}</td>
+                            <td>{{help.salary}}</td>
+                            <td>{{help.address}}</td>
+                            <td>{{help.active}}</td>
+                            <td>{{help.logged}}</td>
+                            <td>{{help.assigned}}</td>
+                            <td>{{help.deptNo}}</td>
+                            <td>
+                                <input type="button" id="btnEdit4" value="Edit" class="btn btn-primary" (click)="btn_HelpEdit(help.helpId)" />
+                                <input type="button" id="btnDelete4" value="Delete" class="btn btn-danger" (click)="btn_HelpDelete(help.helpId)" />
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Hepler Edit -->
+
+<div class="row" *ngIf="flagHelpEdit">
+    <div class="col-sm-12">
+        
+        <div class="row" >
+            <div class="col-sm-3"></div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4" style="margin-top: 10px;background-color: palevioletred;text-align: center;">
+                Edit Helper Details
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+
+        <div class="row" style="margin-top: 10px;">
+         <div class="col-sm-4"></div>
+         <div class="col-sm-1">Name</div>
+         <div class="col-sm-3">
+            <input type="text" [(ngModel)]="Helper.name"  id="name9" class="form-control" />
+         </div>
+         <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOB</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Helper.dob"  id="dob4" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOJ</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Helper.doj"  id="doj4" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+           
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Phone</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Helper.phone"  id="phone8" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Email</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Helper.email"  id="email8" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Password</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Helper.password"  id="pwd8" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Salary</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Helper.salary"  id="sal5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Address</div>
+            <div class="col-sm-3">
+               <input type="text" [(ngModel)]="Helper.address"  id="add8" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+           </div>
+
+           <div class="row" style="margin-top: 20px;text-align: center;">
+            <div class="col-sm-12">
+            
+                <input type="button" id="btn_Update1" value="Update" class="btn btn-primary" (click)="btn_HelpUpdate()"  />
+                <input type="button" id="btn_Cancel1" value="Cancel" class="btn btn-danger" (click)="btn_HelpCancel()" />
+                
+            </div>
+            </div>
+            
+           
+
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+    </div>
+
+</div>
+
+<!-- Helper Delete -->
+
+<div class="row" *ngIf="flagHelpDelete" >
+    <div class="col-sm-12">
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Name</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Helper.name"  id="name9" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOB</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Helper.dob"  id="dob5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DOJ</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Helper.doj"  id="doj5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Phone</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Helper.phone" id="phone5" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Email</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Helper.email"  id="email6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Password</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Helper.password"  id="pwd6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Salary</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Helper.salary" id="sal4" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Address</div>
+            <div class="col-sm-3">
+                <input type="text" [(ngModel)]="Helper.address" id="add6" class="form-control" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Active</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Logged</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">Assigned</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option value="1">True</option>
+                    <option value="2">False</option>
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DocSpecId</div>
+            <div class="col-sm-3">
+                <select [(ngModel)]="Doc.docSpecId" class="form-control">
+                    <option *ngFor="let docspec of DocspecList" value="{{docspec.docSpecId}}">{{docspec.specialization}}</option>
+                    
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+        <!-- <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">DeptNo</div>
+            <div class="col-sm-3">
+                <select class="form-control">
+                    <option *ngFor="let dept of DeptList" value="{{dept.deptNo}}">{{dept.dName}}</option>
+                    
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div> -->
+
+
+        <div class="row" style="text-align: center;margin-top: 20px;">
+            <div class="col-sm-12">
+                <input type="button" id="Reg6" value="Do You want to Delete" class="btn btn-primary"  /> |
+                <input type="button" id="can6" value="Cancel" class="btn btn-danger" (click)="btn_HelpDelCanc()"  />
+            </div>
+        </div>
+
+
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+    </div>
+    
+</div>
+
+

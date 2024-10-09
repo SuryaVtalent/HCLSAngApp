@@ -101,7 +101,17 @@ export class ManageroaadminComponent implements OnInit {
   }
 
   btn_UpdateEdit():void{
+ 
+    let sessionlogval=window.sessionStorage.getItem("login");
+    if(sessionlogval==null){
+      this.FlagEdit=true;
+      this.FlagCancel=false;
 
+    }else{
+      this.FlagEdit=false;
+      this.FlagCancel=true;
+    }
+    
     
     
 
@@ -134,6 +144,16 @@ export class ManageroaadminComponent implements OnInit {
   }
 
   btn_Delete(adminid:number):void{
+    let sessionlogval=window.sessionStorage.getItem("login");
+    if(sessionlogval==null){
+      this.FlagDelete=true;
+      this.FlagDelCancel=false;
+
+    }else{
+      this.FlagDelete=false;
+      this.FlagDelCancel=true;
+    }
+    
 
     this.admser.Deleteadmin(adminid).subscribe(data=>{
       alert(data +"Record Deleted Successfully");

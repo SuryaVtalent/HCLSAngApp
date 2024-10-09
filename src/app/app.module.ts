@@ -27,6 +27,13 @@ import { ManagereceptionistComponent } from './managereceptionist/managereceptio
 import { ManagedoctorComponent } from './managedoctor/managedoctor.component';
 import { ManagehelpersComponent } from './managehelpers/managehelpers.component';
 import { ManagelabsComponent } from './managelabs/managelabs.component';
+import { DepartmentService } from './Services/department.service';
+import { ReceptionService } from './Services/reception.service';
+import { DoctorService } from './Services/doctor.service';
+import { DocspecidService } from './Services/docspecid.service';
+import { HelperService } from './Services/helper.service';
+import { LabService } from './Services/lab.service';
+import { HospitalDetailsComponent } from './hospital-details/hospital-details.component';
 
 
 @NgModule({
@@ -51,7 +58,9 @@ import { ManagelabsComponent } from './managelabs/managelabs.component';
     ManagereceptionistComponent,
     ManagedoctorComponent,
     ManagehelpersComponent,
-    ManagelabsComponent
+    ManagelabsComponent,
+    HospitalDetailsComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -62,6 +71,12 @@ import { ManagelabsComponent } from './managelabs/managelabs.component';
   providers: [
     AdmintypeService,
     AdminService,
+    DepartmentService,
+    ReceptionService,
+    DocspecidService,
+    DoctorService,
+    HelperService,
+    LabService,
     provideClientHydration()
   ],
   bootstrap: [AppComponent]
